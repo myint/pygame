@@ -1,7 +1,7 @@
 """Config on Darwin w/ frameworks"""
 
-import os, sys, string
-from glob import glob
+import os
+
 from distutils.sysconfig import get_python_inc
 from config_unix import DependencyProg
 
@@ -114,8 +114,8 @@ DEPS = [
     Dependency('PNG', 'png.h', 'libpng', ['png']),
     Dependency('JPEG', 'jpeglib.h', 'libjpeg', ['jpeg']),
     Dependency('PORTMIDI', 'portmidi.h', 'libportmidi', ['portmidi']),
-    DependencyProg('FREETYPE', 'FREETYPE_CONFIG', '/usr/X11R6/bin/freetype-config', '2.0',
-                   ['freetype'], '--ftversion'),
+    DependencyProg('FREETYPE', 'FREETYPE_CONFIG', 'false', '2.0',
+                   [], '--ftversion'),
     Dependency('AVFORMAT', '','',[]),
     Dependency('SWSCALE', '','',[]),
     # Scrap is included in sdlmain_osx, there is nothing to look at.
@@ -127,10 +127,9 @@ def main():
     global DEPS
 
     print ('Hunting dependencies...')
-    incdirs = ['/usr/local/include', '/usr/local/include/SDL', 
-                '/usr/X11/include', '/opt/local/include', 
-                '/opt/local/include/freetype2/freetype']
-    libdirs = ['/usr/local/lib', '/usr/X11/lib', '/opt/local/lib']
+    incdirs = ['/usr/local/include', '/usr/local/include/SDL',
+               '/opt/local/include']
+    libdirs = ['/usr/local/lib', '/opt/local/lib']
 
     for d in DEPS:
         if isinstance(d, (list, tuple)):
