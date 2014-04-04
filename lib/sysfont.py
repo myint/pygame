@@ -20,7 +20,10 @@
 
 "sysfont, used in the font module to find system fonts"
 
-import os, sys
+import os
+import platform
+import sys
+
 
 #Python 3 compatibility
 try:
@@ -415,7 +418,10 @@ def initsysfonts_darwin():
     # if the X11 binary exists... try and use that.
     #  Not likely to be there on pre 10.4.x ...
     #    so still need to do other OSX specific method below.
-    if os.path.exists("/usr/X11/bin/fc-list"):
+    if (
+        platform.system() != 'Darwin' and
+        os.path.exists("/usr/X11/bin/fc-list")
+    ):
         fonts = initsysfonts_unix("/usr/X11/bin/fc-list")
     else:
         fonts = {}
