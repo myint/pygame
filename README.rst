@@ -41,7 +41,7 @@ Numeric package for its multidimensional numeric arrays.
 
 On OS X with MacPorts::
 
-   $ sudo port install libsdl_mixer libsdl_image libsdl_ttf -x11
+    $ sudo port install libsdl_mixer libsdl_image libsdl_ttf libsdl -x11
 
 
 Help
