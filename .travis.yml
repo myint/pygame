@@ -5,7 +5,10 @@ install:
     - sudo python setup.py install -noheaders
 
 env:
-    - SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=disk
+    - DISPLAY=:99.0 SDL_AUDIODRIVER=disk
+
+before_script:
+    - sh -e /etc/init.d/xvfb start
 
 script:
     - python -m pygame.tests.__main__ --exclude opengl
