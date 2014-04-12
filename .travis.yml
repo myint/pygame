@@ -1,14 +1,8 @@
-language: cpp
+language: objective-c
 
 install:
     - sudo python config.py -auto
     - sudo python setup.py install -noheaders
-
-env:
-    - DISPLAY=:99.0 SDL_AUDIODRIVER=disk
-
-before_script:
-    - sh -e /etc/init.d/xvfb start
 
 script:
     - python -m pygame.tests.__main__ --exclude opengl
