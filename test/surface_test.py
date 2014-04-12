@@ -670,22 +670,6 @@ class SurfaceTypeTest(unittest.TestCase):
         source.set_at((0, 0), color)
         target.blit(source, (0, 0))
 
-    @unittest.skip('Not working since before fork')
-    def test_image_convert_bug_131(self):
-        # Bitbucket bug #131: Unable to Surface.convert(32) some 1-bit images.
-        # https://bitbucket.org/pygame/pygame/issue/131/unable-to-surfaceconvert-32-some-1-bit
-        pygame.display.init()
-        pygame.display.set_mode((640,480))
-
-        im  = pygame.image.load(example_path(os.path.join("data", "city.png")))
-        im2 = pygame.image.load(example_path(os.path.join("data", "brick.png")))
-
-        self.assertEquals( im.get_palette(),  ((0, 0, 0, 255), (255, 255, 255, 255)) )
-        self.assertEquals( im2.get_palette(), ((0, 0, 0, 255), (0, 0, 0, 255)) )
-
-        self.assertEqual(repr(im.convert(32)),  '<Surface(24x24x32 SW)>')
-        self.assertEqual(repr(im2.convert(32)), '<Surface(469x137x32 SW)>')
-
     def todo_test_convert(self):
 
         # __doc__ (as of 2008-08-02) for pygame.surface.Surface.convert:
