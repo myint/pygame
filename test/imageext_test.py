@@ -54,6 +54,7 @@ class ImageextModuleTest( unittest.TestCase ):
         im = imageext.load_extended(u)
     
     def test_save_unicode_path(self):
+        "|tags:unicode|"
         temp_file = unicode_("tmpimg.png")
         im = pygame.Surface((10, 10), 0, 32)
         try:

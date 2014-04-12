@@ -273,6 +273,7 @@ class MixerModuleTest(unittest.TestCase):
             mixer.quit()
 
     def test_array_keyword(self):
+        "|tags:mixer|"
         try:
             from numpy import (array, arange, zeros,
                                int8, uint8,

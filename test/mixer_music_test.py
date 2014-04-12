@@ -23,6 +23,7 @@ import os
 
 class MixerMusicModuleTest(unittest.TestCase):
     def test_load(self):
+        "|tags:mixer|"
         # __doc__ (as of 2008-07-13) for pygame.mixer_music.load:
         
           # pygame.mixer.music.load(filename): return None
