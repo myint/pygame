@@ -1,3 +1,12 @@
+======
+pygame
+======
+
+.. image:: https://travis-ci.org/myint/pygame.svg?branch=master
+    :target: https://travis-ci.org/myint/pygame
+    :alt: Build status
+
+
 About pygame
 ============
 
