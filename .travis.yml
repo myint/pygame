@@ -1,13 +1,12 @@
 language: objective-c
 
+before_install:
+    - brew update
+    - brew install sdl sdl_mixer sdl_ttf sdl_image
+
 install:
     - sudo python config.py -auto
     - sudo python setup.py install -noheaders
 
 script:
     - python -m pygame.tests.__main__ --exclude file,mixer,unicode
-
-
-before_install:
-    - brew update
-    - brew install sdl sdl_mixer sdl_ttf sdl_image
