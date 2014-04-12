@@ -61,7 +61,7 @@ class ImageModuleTest( unittest.TestCase ):
         pygame.image.load(f)
 
     def test_save(self):
-
+        "|tags:file|"
         s = pygame.Surface((10,10))
         s.fill((23,23,23))
         magic_hex = {}
@@ -98,8 +98,7 @@ class ImageModuleTest( unittest.TestCase ):
 
                 
     def test_save_colorkey(self):
-        """ make sure the color key is not changed when saving.
-        """
+        "|tags:file|"
         s = pygame.Surface((10,10), pygame.SRCALPHA, 32)
         s.fill((23,23,23))
         s.set_colorkey((0,0,0))

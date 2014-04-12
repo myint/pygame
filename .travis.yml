@@ -5,7 +5,7 @@ install:
     - sudo python setup.py install -noheaders
 
 script:
-    - python -m pygame.tests.__main__ --exclude opengl --exclude unicode --exclude mixer
+    - python -m pygame.tests.__main__ --exclude file,opengl,unicode,mixer
 
 
 before_install:
